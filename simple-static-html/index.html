@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Static HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .banner {
+            background-color: blue;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 60%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">Hello, Docker!</div>
+    <p>This is a simple static HTML page served by Node.js.</p>
+    <p id="datetime"></p>
+
+    <h2>Random Italian Meal Selection</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Dish</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Appetizer</td>
+                <td>Bruschetta</td>
+            </tr>
+            <tr>
+                <td>Main Course</td>
+                <td>Spaghetti Carbonara</td>
+            </tr>
+            <tr>
+                <td>Dessert</td>
+                <td>Tiramisu</td>
+            </tr>
+            <tr>
+                <td>Drink</td>
+                <td>Chianti</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const dateTimeString = now.toLocaleString();
+            document.getElementById('datetime').innerText = `Current date and time: ${dateTimeString}`;
+        }
+
+        // Update date and time on page load
+        updateDateTime();
+
+        // Update date and time every second
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
